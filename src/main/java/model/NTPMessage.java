@@ -89,10 +89,10 @@ public class NTPMessage {
                 "Root delay: " + new DecimalFormat("0.00").format(rootDelay * 1000) + " ms\n" +
                 "Root dispersion: " + new DecimalFormat("0.00").format(rootDispersion * 1000) + " ms\n" +
                 "Reference id: " + referenceIdToString() + "\n" +
-                "Reference timestamp:\t" + Util.timestampToString(referenceTimestamp) + "\n" +
-                "Originate timestamp:\t" + Util.timestampToString(originTimestamp) + "\n" +
-                "Receive timestamp:\t\t" + Util.timestampToString(receiveTimestamp) + "\n" +
-                "Transmit timestamp:\t\t" + Util.timestampToString(transmitTimestamp);
+                "Reference timestamp:    " + Util.timestampToString(referenceTimestamp) + "\n" +
+                "Originate timestamp:    " + Util.timestampToString(originTimestamp) + "\n" +
+                "Receive timestamp:      " + Util.timestampToString(receiveTimestamp) + "\n" +
+                "Transmit timestamp:     " + Util.timestampToString(transmitTimestamp);
     }
 
     private String referenceIdToString() {

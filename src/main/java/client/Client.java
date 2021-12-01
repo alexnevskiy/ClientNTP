@@ -44,7 +44,7 @@ public class Client extends Thread {
             System.out.println(message.toString());
             System.out.println("=================================================");
 
-            System.out.println("Destination timestamp:\t" + Util.timestampToString(destinationTimestamp));
+            System.out.println("Destination timestamp:  " + Util.timestampToString(destinationTimestamp));
 
             System.out.println("Round-trip delay: " +
                     new DecimalFormat("0.00").format(roundTripDelay * 1000) + " ms");
