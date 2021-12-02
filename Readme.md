@@ -12,7 +12,7 @@
 - `mode` = 3
 - `transmitTimestamp` = текущее время в секундах + начальная эпоха (1970 - 1900)
 
-Далее созданная дэйтаграмма отправляется на сервер, и клиент ожидает от него ответного сообщения. После получения пакета фиксируется время прибытия, и высчитывается задержка приёма-передачи,![\delta](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5Cdelta%0A)и смещение по времени ![\theta](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5Ctheta%0A)по следующим формулам:
+Далее созданная дэйтаграмма отправляется на сервер, и клиент ожидает от него ответного сообщения. После получения пакета фиксируется время прибытия, и высчитывается задержка приёма-передачи, ![\delta](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5Cdelta%0A) и смещение по времени ![\theta](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5Ctheta%0A) по следующим формулам:
 
 ![\begin{gather*}
 \delta = (t_3 - t_0) - (t_2 - t_1) \\
