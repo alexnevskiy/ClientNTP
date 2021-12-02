@@ -6,21 +6,24 @@
 
 Для реализации модели NTP-сообщения написан класс [NTPMessage](https://github.com/alexnevskiy/ClientNTP/blob/master/src/main/java/model/NTPMessage.java), в котором описаны все используемые в протоколе поля.
 
-При запуске клиента создаётся NTP-сообщение со всем нулевыми полями кроме:
+При запуске клиента создаётся NTP-сообщение со всеми нулевыми полями кроме:
 
 - `version` = 4
 - `mode` = 3
 - `transmitTimestamp` = текущее время в секундах + начальная эпоха (1970 - 1900)
 
-Далее созданная дэйтаграмма отправляется на сервер, и клиент ожидает от него ответного сообщения. После получения пакета фиксируется время прибытия, и высчитывается задержка приёма-передачи $$\delta$$ и смещение по времени $$\theta$$ по следующим формулам:
-$$
+Далее созданная дэйтаграмма отправляется на сервер, и клиент ожидает от него ответного сообщения. После получения пакета фиксируется время прибытия, и высчитывается задержка приёма-передачи,![\delta](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5Cdelta%0A)и смещение по времени ![\theta](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5Ctheta%0A)по следующим формулам:
+
+![\begin{gather*}
 \delta = (t_3 - t_0) - (t_2 - t_1) \\
 \theta = \frac{(t_1 - t_0) - (t_2 - t_3)}{2}, \text{где} \\
 t_0 - \text{originate timestamp,} \\
 t_1 - \text{receive timestamp,} \\
 t_2 - \text{transmit timestamp,} \\
 t_3 - \text{destination timestamp} \\
-$$
+\end{gather*}
+](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5Cbegin%7Bgather%2A%7D%0A%5Cdelta+%3D+%28t_3+-+t_0%29+-+%28t_2+-+t_1%29+%5C%5C%0A%5Ctheta+%3D+%5Cfrac%7B%28t_1+-+t_0%29+-+%28t_2+-+t_3%29%7D%7B2%7D%2C+%5Ctext%7B%D0%B3%D0%B4%D0%B5%7D+%5C%5C%0At_0+-+%5Ctext%7Boriginate+timestamp%2C%7D+%5C%5C%0At_1+-+%5Ctext%7Breceive+timestamp%2C%7D+%5C%5C%0At_2+-+%5Ctext%7Btransmit+timestamp%2C%7D+%5C%5C%0At_3+-+%5Ctext%7Bdestination+timestamp%7D+%5C%5C%0A%5Cend%7Bgather%2A%7D%0A)
+
 В конце выводится информация о полученном сообщении и вычисленные значения.
 
 ## Запуск клиента
